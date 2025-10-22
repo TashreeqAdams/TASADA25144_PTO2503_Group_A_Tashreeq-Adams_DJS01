@@ -13,10 +13,8 @@ podcasts.forEach((podcast) => {
         <i class="fa fa-calendar"></i>
         <p>${podcast.seasons} seasons</p>
       </div>
-      <div>
-        <p>${podcast.genres?.join(", ")}</p>
-        <p>Updated ${podcast.updated}</p>
-      </div>
+        <p class="podcast-genres">${podcast.genres?.join(", ")}</p>
+        <p class="podcast-update">Updated ${podcast.updated}</p>
     `;
 
   thumbnail.appendChild(podcastThumbnail);

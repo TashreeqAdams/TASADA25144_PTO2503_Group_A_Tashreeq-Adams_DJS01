@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="./scripts.js" type="module"></script>
+    <script src="./modal.js" type="module"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -36,10 +37,23 @@
         </select>
       </div>
       <div id="thumbnail-container"></div>
-      <dialog class="modal">
+      <dialog id="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <h1>Podcast Title</h1>
+          <div class="inner-modal">
+            <img src="./assets/Placeholder_view_vector.svg.png" />
+            <div class="modal-info">
+              <p>Description</p>
+              <p>blah blah blah</p>
+              <p>Genres</p>
+              <div>pills</div>
+              <p>Last Updated</p>
+            </div>
+            <div class="podcast-seasons">
+              <h1>Seasons</h1>
+            </div>
+          </div>
         </div>
       </dialog>
     </main>

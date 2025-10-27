@@ -6,6 +6,7 @@
     <title>Document</title>
     <script src="./scripts.js" type="module"></script>
     <script src="./modal.js" type="module"></script>
+    <script src="./innerModal.js" type="module"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -38,22 +39,8 @@
       </div>
       <div id="thumbnail-container"></div>
       <dialog id="modal">
-        <div class="modal-content">
+        <div class="modal-content" id="podcast-modal-content">
           <span class="close">&times;</span>
-          <h1>Podcast Title</h1>
-          <div class="inner-modal">
-            <img src="./assets/Placeholder_view_vector.svg.png" />
-            <div class="modal-info">
-              <p>Description</p>
-              <p>blah blah blah</p>
-              <p>Genres</p>
-              <div>pills</div>
-              <p>Last Updated</p>
-            </div>
-            <div class="podcast-seasons">
-              <h1>Seasons</h1>
-            </div>
-          </div>
         </div>
       </dialog>
     </main>

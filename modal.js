@@ -12,11 +12,18 @@ for (let i = 0; i < openModal.length; i++) {
 
     if (currentPodcast && currentPodcast.id) {
       const descEl = document.getElementById("modal-desc");
+      const imgEl = document.getElementById("modal-img");
 
       if (descEl) {
         descEl.innerText = currentPodcast.description;
       } else {
         console.warn("Object ID not found");
+      }
+
+      if (imgEl) {
+        imgEl.src = currentPodcast.image;
+      } else {
+        console.warn("img not found");
       }
 
       modal.showModal();

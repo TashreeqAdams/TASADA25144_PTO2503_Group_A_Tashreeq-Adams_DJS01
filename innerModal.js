@@ -6,7 +6,7 @@ const addDetails = () => {
   const podcastDetails = document.createElement("div");
   podcastDetails.classList.add("inner-modal");
 
-  podcastDetails.innerHTML = `<img src="./assets/Placeholder_view_vector.svg.png" />
+  podcastDetails.innerHTML = `<img id="modal-img"/>
             <div class="modal-info">
               <p>Description</p>
               <p id="modal-desc"></p>

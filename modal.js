@@ -8,11 +8,18 @@ const closeModal = document.getElementsByClassName("close");
 for (let i = 0; i < openModal.length; i++) {
   openModal[i].addEventListener("click", () => {
     const currentPodcast = podcasts[i];
-    console.log("Current podcast:", currentPodcast);
+    // console.log("Current podcast:", currentPodcast);
+    const podcastGenres = genres[i];
+    // console.log(podcastGenres);
+    const podcastSeasons = seasons[i];
+    console.log("podcastSeasons =", podcastSeasons);
 
     if (currentPodcast && currentPodcast.id) {
       const descEl = document.getElementById("modal-desc");
       const imgEl = document.getElementById("modal-img");
+      const genreEl = document.getElementById("modal-genres");
+      const updatedEl = document.getElementById("modal-last-updated");
+      const seasonsEl = document.getElementById("podcast-seasons");
 
       if (descEl) {
         descEl.innerText = currentPodcast.description;
@@ -24,6 +31,32 @@ for (let i = 0; i < openModal.length; i++) {
         imgEl.src = currentPodcast.image;
       } else {
         console.warn("img not found");
+      }
+
+      if (genreEl) {
+        genreEl.innerText = podcastGenres.title;
+      } else {
+        console.warn("genre not found");
+      }
+
+      if (updatedEl) {
+        updatedEl.innerText = `Last updated: ${currentPodcast.updated}`;
+      } else {
+        console.warn("date not found");
+      }
+
+      if (seasonsEl && Array.isArray(podcastSeasons.seasonDetails)) {
+        seasonsEl.innerHTML = "";
+        podcastSeasons.seasonDetails.forEach((season) => {
+          const seasonItem = document.createElement("div");
+          seasonItem.classList.add("season");
+
+          seasonItem.innerText = `${season.title} - ${season.episodes} episodes`;
+
+          seasonsEl.appendChild(seasonItem);
+        });
+      } else {
+        console.warn("seasons not found");
       }
 
       modal.showModal();

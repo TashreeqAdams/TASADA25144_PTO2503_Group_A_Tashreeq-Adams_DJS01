@@ -46,7 +46,7 @@ for (let i = 0; i < openModal.length; i++) {
       }
 
       if (seasonsEl && Array.isArray(podcastSeasons.seasonDetails)) {
-        seasonsEl.innerHTML = "";
+        seasonsEl.innerHTML = "<h1>Seasons</h1>";
         podcastSeasons.seasonDetails.forEach((season) => {
           const seasonItem = document.createElement("div");
           seasonItem.classList.add("season");

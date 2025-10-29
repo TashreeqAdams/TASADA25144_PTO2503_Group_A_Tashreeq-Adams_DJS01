@@ -81,6 +81,7 @@ body {
   padding: 20px;
   width: 70%;
   border-radius: 10px;
+  margin-bottom: 100px;
 }
 
 /* The Close Button */
@@ -128,10 +129,17 @@ body {
   padding: 20px;
 }
 
-.podcast-seasons {
-  grid-column: 1 / 3;
+.modal-podcast-seasons {
+  grid-column: 1 / -1;
   grid-row: 2 / 3;
   padding: 20px;
+}
+
+.season {
+  height: 50px;
+  border-radius: 10px;
+  border: solid 1px black;
+  margin-bottom: 10px;
 }
 
 /* Media queries */

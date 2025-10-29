@@ -14,7 +14,7 @@ const addDetails = () => {
               <div id="modal-genres"></div>
               <p id="modal-last-updated">Last Updated</p>
             </div>
-            <div id="podcast-seasons">
+            <div id="podcast-seasons" class="modal-podcast-seasons">
               <h1>Seasons</h1>
             </div>`;
 

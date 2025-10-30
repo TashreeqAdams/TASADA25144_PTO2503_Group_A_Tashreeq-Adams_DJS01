@@ -1,4 +1,5 @@
 import { podcasts, genres, seasons } from "./data.js";
+import { daysAgo } from "./dateConverter.js";
 
 podcasts.forEach((podcast) => {
   const genreTitles = podcast.genres
@@ -21,7 +22,7 @@ podcasts.forEach((podcast) => {
         <p>${podcast.seasons} seasons</p>
       </div>
         <p class="podcast-genres">${genreTitles}</p>
-        <p class="podcast-update">Updated ${podcast.updated}</p>
+        <p class="podcast-update">Updated ${daysAgo(podcast.updated)}</p>
     `;
 
   thumbnail.appendChild(podcastThumbnail);

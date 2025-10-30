@@ -1,4 +1,5 @@
 import { podcasts, genres, seasons } from "./data.js";
+import { daysAgo } from "./dateConverter.js";
 
 const modal = document.getElementById("modal");
 const openModal = document.getElementsByClassName("thumbnail");
@@ -47,7 +48,9 @@ for (let i = 0; i < openModal.length; i++) {
       }
 
       if (updatedEl) {
-        updatedEl.innerText = `Last updated: ${currentPodcast.updated}`;
+        updatedEl.innerText = `Last updated: ${daysAgo(
+          currentPodcast.updated
+        )}`;
       } else {
         console.warn("date not found");
       }

@@ -1,17 +1,17 @@
 import { podcasts, genres, seasons } from "./data.js";
 
 podcasts.forEach((podcast) => {
-  const thumbnail = document.getElementById("thumbnail-container");
-
-  const podcastThumbnail = document.createElement("div");
-  podcastThumbnail.classList.add("thumbnail");
-
   const genreTitles = podcast.genres
     .map((genreId) => {
       const genre = genres.find((g) => g.id === genreId);
       return genre ? genre.title : "Unknown";
     })
     .join(", ");
+
+  const thumbnail = document.getElementById("thumbnail-container");
+
+  const podcastThumbnail = document.createElement("div");
+  podcastThumbnail.classList.add("thumbnail");
 
   podcastThumbnail.innerHTML = `
       <img class="podcast-img" src="${podcast.image}" alt="${podcast.title}" />

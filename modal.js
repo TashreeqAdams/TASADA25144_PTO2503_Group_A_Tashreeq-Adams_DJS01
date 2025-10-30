@@ -9,10 +9,17 @@ for (let i = 0; i < openModal.length; i++) {
   openModal[i].addEventListener("click", () => {
     const currentPodcast = podcasts[i];
     // console.log("Current podcast:", currentPodcast);
-    const podcastGenres = genres[i];
+    // const podcastGenres = genres[i];
     // console.log(podcastGenres);
     const podcastSeasons = seasons[i];
-    console.log("podcastSeasons =", podcastSeasons);
+    // console.log("podcastSeasons =", podcastSeasons);
+
+    const genreTitles = currentPodcast.genres
+      .map((genreId) => {
+        const genre = genres.find((g) => g.id === genreId);
+        return genre ? genre.title : "Unknown";
+      })
+      .join(", ");
 
     if (currentPodcast && currentPodcast.id) {
       const descEl = document.getElementById("modal-desc");
@@ -34,7 +41,7 @@ for (let i = 0; i < openModal.length; i++) {
       }
 
       if (genreEl) {
-        genreEl.innerText = podcastGenres.title;
+        genreEl.innerText = genreTitles;
       } else {
         console.warn("genre not found");
       }

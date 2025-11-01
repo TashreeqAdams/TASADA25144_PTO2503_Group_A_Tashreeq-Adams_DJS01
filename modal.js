@@ -49,7 +49,14 @@ for (let i = 0; i < openModal.length; i++) {
       }
 
       if (genreEl) {
-        genreEl.innerText = genreTitles;
+        const splitTitles = genreTitles.split(",");
+        genreEl.innerHTML = "";
+        splitTitles.forEach((item) => {
+          const p = document.createElement("p");
+          p.classList.add("modal-genre-pill");
+          p.textContent = item;
+          genreEl.appendChild(p);
+        });
       } else {
         console.warn("genre not found");
       }

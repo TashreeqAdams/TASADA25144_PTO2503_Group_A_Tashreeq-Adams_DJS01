@@ -160,6 +160,29 @@ body {
   margin-top: 0px;
 }
 
+#modal-genres {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.podcast-genres {
+  display: flex;
+  gap: 8px;
+}
+
+.podcast-genres p {
+  font-size: 14px;
+}
+
+.modal-genre-pill,
+.podcast-genres p {
+  padding: 8px;
+  background-color: #febe0e;
+  border-radius: 20px;
+  color: #040214;
+}
+
 .modal-podcast-seasons {
   grid-column: 1 / -1;
   grid-row: 3 / 4;

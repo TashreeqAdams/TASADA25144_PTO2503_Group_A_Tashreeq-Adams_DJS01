@@ -9,6 +9,8 @@ podcasts.forEach((podcast) => {
     })
     .join(", ");
 
+  const splitTitles = genreTitles.split(",");
+
   const thumbnail = document.getElementById("thumbnail-container");
 
   const podcastThumbnail = document.createElement("div");
@@ -21,7 +23,9 @@ podcasts.forEach((podcast) => {
         <i class="fa fa-calendar"></i>
         <p>${podcast.seasons} seasons</p>
       </div>
-        <p class="podcast-genres">${genreTitles}</p>
+        <div class="podcast-genres">${splitTitles
+          .map((title) => `<p>${title.trim()}</p>`)
+          .join("")}</div>
         <p class="podcast-update">Updated ${daysAgo(podcast.updated)}</p>
     `;
 

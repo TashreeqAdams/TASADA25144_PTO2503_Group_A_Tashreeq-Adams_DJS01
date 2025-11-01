@@ -23,11 +23,18 @@ for (let i = 0; i < openModal.length; i++) {
       .join(", ");
 
     if (currentPodcast && currentPodcast.id) {
+      const podTitle = document.getElementById("pod-title");
       const descEl = document.getElementById("modal-desc");
       const imgEl = document.getElementById("modal-img");
       const genreEl = document.getElementById("modal-genres");
       const updatedEl = document.getElementById("modal-last-updated");
       const seasonsEl = document.getElementById("podcast-seasons");
+
+      if (podTitle) {
+        podTitle.innerText = currentPodcast.title;
+      } else {
+        console.warn("Title not found");
+      }
 
       if (descEl) {
         descEl.innerText = currentPodcast.description;

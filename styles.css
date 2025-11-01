@@ -125,9 +125,16 @@ body {
   gap: 10px;
 }
 
+#pod-title {
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+  margin: 0;
+  padding: 10px 0;
+}
+
 .inner-modal img {
   grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -136,14 +143,14 @@ body {
 
 .modal-info {
   grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  grid-row: 2 / 3;
 
   padding: 20px;
 }
 
 .modal-podcast-seasons {
   grid-column: 1 / -1;
-  grid-row: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 .modal-podcast-seasons h1 {
@@ -165,16 +172,38 @@ body {
   #thumbnail-container {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .inner-modal {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+  }
 }
 
 @media (max-width: 900px) {
   #thumbnail-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .inner-modal {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner-modal img {
+    width: 70%;
+  }
 }
 
 @media (max-width: 600px) {
   #thumbnail-container {
     grid-template-columns: 1fr;
+  }
+
+  .inner-modal img {
+    width: 100%;
+  }
+
+  .close {
+    font-size: 30px;
   }
 }

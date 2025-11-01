@@ -68,7 +68,7 @@ for (let i = 0; i < openModal.length; i++) {
           const seasonItem = document.createElement("div");
           seasonItem.classList.add("season");
 
-          seasonItem.innerText = `${season.title} - ${season.episodes} episodes`;
+          seasonItem.innerHTML = `<p>${season.title}<p><span>${season.episodes} episodes<span>`;
 
           seasonsEl.appendChild(seasonItem);
         });

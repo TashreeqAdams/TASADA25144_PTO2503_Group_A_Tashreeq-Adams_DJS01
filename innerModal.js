@@ -8,14 +8,13 @@ const addDetails = () => {
 
   podcastDetails.innerHTML = `<h1 id="pod-title"></h1><img id="modal-img"/>
             <div class="modal-info">
-              <p>Description</p>
+              <h1>Description</h1>
               <p id="modal-desc"></p>
-              <p>Genres</p>
+              <h1>Genres</h1>
               <div id="modal-genres"></div>
               <p id="modal-last-updated">Last Updated</p>
             </div>
             <div id="podcast-seasons" class="modal-podcast-seasons">
-              <h1>Seasons</h1>
             </div>`;
 
   innerPodcast.appendChild(podcastDetails);

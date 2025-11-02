@@ -12,6 +12,15 @@ import { daysAgo } from "./dateConverter.js";
  */
 
 podcasts.forEach((podcast) => {
+  /**
+   * Renders a string for the genres of the current thumbnail.
+   *
+   * For each 'podcast.genre' an id is collected and matched with
+   * a corresponding id from the genre objects in the genres array.
+   * If no match the default genre is "unknown".
+   *
+   * @type {string}
+   */
   const genreTitles = podcast.genres
     .map((genreId) => {
       const genre = genres.find((g) => g.id === genreId);

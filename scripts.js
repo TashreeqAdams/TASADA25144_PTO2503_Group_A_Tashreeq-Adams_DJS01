@@ -28,6 +28,9 @@ podcasts.forEach((podcast) => {
     })
     .join(", ");
 
+  /**
+   * Splits the joined comma-separated genres into an array.
+   */
   const splitTitles = genreTitles.split(",");
 
   const thumbnail = document.getElementById("thumbnail-container");
@@ -35,6 +38,7 @@ podcasts.forEach((podcast) => {
   const podcastThumbnail = document.createElement("div");
   podcastThumbnail.classList.add("thumbnail");
 
+  // Sets the data in the thumbnail to be displayed
   podcastThumbnail.innerHTML = `
       <img class="podcast-img" src="${podcast.image}" alt="${podcast.title}" />
       <h1 class="podcast-title">${podcast.title}</h1>
@@ -48,5 +52,6 @@ podcasts.forEach((podcast) => {
         <p class="podcast-update">Updated ${daysAgo(podcast.updated)}</p>
     `;
 
+  // Appends the thumbnail to the #thumbnail-container.
   thumbnail.appendChild(podcastThumbnail);
 });

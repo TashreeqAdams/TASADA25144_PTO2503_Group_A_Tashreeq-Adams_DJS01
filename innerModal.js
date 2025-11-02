@@ -1,5 +1,6 @@
 import { podcasts, genres, seasons } from "./data.js";
 
+//Creates the structure of the content inside the modal
 const addDetails = () => {
   const innerPodcast = document.getElementById("podcast-modal-content");
 

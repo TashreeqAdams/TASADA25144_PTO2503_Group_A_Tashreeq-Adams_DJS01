@@ -20,7 +20,6 @@ The project includes:
 - A dynamic landing page displaying a collection of podcast shows with cover image, title, number of seasons, genres, and last updated date (formatted for readability).
 - A modal that opens on click to reveal detailed show information, including a larger cover image, full description, genre tags, last updated date, and a list of seasons with episode counts.
 - Smooth, responsive modal behavior with accessible open/close interactions.
-- Modular JavaScript structure following OOP and functional programming principles for clarity and reusability.
 - JSDoc comments added for key functions and modules to ensure maintainability and readability.
 - Fully responsive layout optimized for desktop, tablet, and mobile experiences.
 

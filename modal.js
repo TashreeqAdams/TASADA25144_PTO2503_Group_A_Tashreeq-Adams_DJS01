@@ -9,11 +9,7 @@ const closeModal = document.getElementsByClassName("close");
 for (let i = 0; i < openModal.length; i++) {
   openModal[i].addEventListener("click", () => {
     const currentPodcast = podcasts[i];
-    // console.log("Current podcast:", currentPodcast);
-    // const podcastGenres = genres[i];
-    // console.log(podcastGenres);
     const podcastSeasons = seasons[i];
-    // console.log("podcastSeasons =", podcastSeasons);
 
     const genreTitles = currentPodcast.genres
       .map((genreId) => {

@@ -5,7 +5,11 @@ const modal = document.getElementById("modal");
 const openModal = document.getElementsByClassName("thumbnail");
 const closeModal = document.getElementsByClassName("close");
 
-// Loop through all elements with class "thumbnail"
+/**
+ * Loop through all elements with class "thumbnail"
+ * Adds a click listener to each thumbnail that tracks which item was clicked
+ * and displays that data in the inner modal
+ */
 for (let i = 0; i < openModal.length; i++) {
   openModal[i].addEventListener("click", () => {
     const currentPodcast = podcasts[i];
@@ -17,6 +21,8 @@ for (let i = 0; i < openModal.length; i++) {
         return genre ? genre.title : "Unknown";
       })
       .join(", ");
+
+    // If currentPodcast exists and it has an id populate the inner modal with this data
 
     if (currentPodcast && currentPodcast.id) {
       const podTitle = document.getElementById("pod-title");
@@ -41,7 +47,7 @@ for (let i = 0; i < openModal.length; i++) {
       if (imgEl) {
         imgEl.src = currentPodcast.image;
       } else {
-        console.warn("img not found");
+        console.warn("Image not found");
       }
 
       if (genreEl) {
@@ -54,7 +60,7 @@ for (let i = 0; i < openModal.length; i++) {
           genreEl.appendChild(p);
         });
       } else {
-        console.warn("genre not found");
+        console.warn("Genre not found");
       }
 
       if (updatedEl) {
@@ -62,7 +68,7 @@ for (let i = 0; i < openModal.length; i++) {
           currentPodcast.updated
         )}`;
       } else {
-        console.warn("date not found");
+        console.warn("Date not found");
       }
 
       if (seasonsEl && Array.isArray(podcastSeasons.seasonDetails)) {
@@ -76,14 +82,13 @@ for (let i = 0; i < openModal.length; i++) {
           seasonsEl.appendChild(seasonItem);
         });
       } else {
-        console.warn("seasons not found");
+        console.warn("Seasons not found");
       }
 
       modal.showModal();
     } else {
       console.warn("Podcast ID not found");
     }
-    // console.log(currentPodcast.id);
   });
 }
 
